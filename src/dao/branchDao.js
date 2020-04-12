@@ -1,17 +1,5 @@
-const Optional = require('../util/Optional');
-
-class Entry {
-
-  constructor(position, data) {
-    this.position = position;
-    this.data = data;
-  }
-
-  data() {
-    return this.data;
-  }
-
-};
+const Optional = require('../util/optional');
+const Entry = require('../util/entry');
 
 class BranchDao {
 

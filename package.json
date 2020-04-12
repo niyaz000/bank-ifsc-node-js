@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "test": "jest --forceExit --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "jest": "^25.3.0",
     "jscs": "^3.0.7",
     "nodemon": "^2.0.3"
   }
