@@ -10,10 +10,16 @@ const branchControllerGet = (req, res) => {
     res.status(404);
     return;
   }
-  res.status(200).json(branch.get())
+  res.status(200).json(branch.data())
 }
 
-module.expors = {
+const branchControllerPost = (req, res) => {
+  const branch = this.service.save(req.body);
+  res.status(201).json(branch)
+}
+
+module.exports = {
   branchControllerGet,
+  branchControllerPost,
   setService
 }

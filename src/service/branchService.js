@@ -1,8 +1,15 @@
+const Branch = require('../model/branch');
 
 class BranchService {
 
   constructor(dao) {
     this.dao = dao;
+  }
+
+  save(branch) {
+    const b = new Branch(branch);
+    b.id = branch.ifsc;
+    return this.dao.add(b);
   }
 
   findById(id) {
@@ -17,3 +24,5 @@ class BranchService {
 
   }
 }
+
+module.exports = BranchService;

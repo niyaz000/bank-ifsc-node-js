@@ -18,6 +18,7 @@ class BranchDao {
     const entry = new Entry(length, branch);
     this.branches.push(entry);
     this.updateMaps(branch, entry);
+    return branch;
   }
 
   checkIfNotExists(branch) {
