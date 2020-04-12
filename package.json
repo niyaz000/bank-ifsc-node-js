@@ -1,0 +1,32 @@
+{
+  "name": "bank-ifsc-node",
+  "version": "1.0.0",
+  "description": "retrieve indian bank branch details via ifsc,micr codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niyaz000/bank-ifsc-node-js.git"
+  },
+  "keywords": [
+    "banks",
+    "ifsc",
+    "micr"
+  ],
+  "author": "Niyaz K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niyaz000/bank-ifsc-node-js/issues"
+  },
+  "homepage": "https://github.com/niyaz000/bank-ifsc-node-js#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
