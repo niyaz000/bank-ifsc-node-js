@@ -1,10 +1,10 @@
 const Optional = require('../util/optional');
 const Entry = require('../util/entry');
+const DuplicateBranchException = require('../exception/duplicateBranch');
 
 class BranchDao {
 
   constructor() {
-    this.counter = 0;
     this.branches = [];
     this.ifscMap = new Map();
     this.micrMap = new Map();
@@ -13,14 +13,20 @@ class BranchDao {
   }
 
   add(branch) {
-    this.branch.id = ++this.counter;
+    this.checkIfNotExists(branch)
     const length = this.branches.length;
     const entry = new Entry(length, branch);
     this.branches.push(entry);
-    updateMaps(branch);
+    this.updateMaps(branch, entry);
   }
 
-  updateMaps(branch) {
+  checkIfNotExists(branch) {
+    if(this.ifscMap.get(branch.ifsc) != null) {
+      throw DuplicateBranchException(`duplicate branch with same ifsc ${branch.ifsc}`)
+    }
+  }
+
+  updateMaps(branch, entry) {
     this.ifscMap.set(branch.ifsc, entry);
     this.micrMap.set(branch.micr, entry);
     this.idMap.set(branch.id, entry);
@@ -60,6 +66,4 @@ class BranchDao {
 
 };
 
-module.exports = {
-  BranchDao
-};
+module.exports = BranchDao;
