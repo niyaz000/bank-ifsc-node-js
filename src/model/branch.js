@@ -1,5 +1,5 @@
 
-export default class Branch {
+class Branch {
 
   constructor(options) {
     this.address = options.address;
@@ -15,4 +15,14 @@ export default class Branch {
     this.id = options.id;
   }
 
+  equals(branch) {
+    return (JSON.stringify(this) == JSON.stringify(branch));
+  }
+
+  toJsonString() {
+    return JSON.stringify(this);
+  }
+
 }
+
+module.exports = Branch
