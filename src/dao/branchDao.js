@@ -23,7 +23,7 @@ class BranchDao {
 
   checkIfNotExists(branch) {
     if(this.ifscMap.get(branch.ifsc) != null) {
-      throw DuplicateBranchException(`duplicate branch with same ifsc ${branch.ifsc}`)
+      throw new DuplicateBranchException(`duplicate branch with same ifsc ${branch.ifsc}`)
     }
   }
 
